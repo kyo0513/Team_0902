@@ -21,11 +21,11 @@ TagManager:
   - bg
   - Laddar
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BackGround
+  - FerrisWheel
+  - MerryGoRound
+  - Player
+  - FrontAccesary
   - 
   - 
   - 
@@ -45,6 +45,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 3970730495
+    locked: 0
+  - name: MerryGoRound
+    uniqueID: 3751888151
+    locked: 0
+  - name: FerrisWheel
+    uniqueID: 3887804665
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 4209921565
+    locked: 0
+  - name: FrontAccesary
+    uniqueID: 3130990879
     locked: 0
