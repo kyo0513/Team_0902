@@ -639,7 +639,7 @@ GameObject:
   - component: {fileID: 113983171}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2061,6 +2061,7 @@ GameObject:
   - component: {fileID: 161394099}
   - component: {fileID: 161394100}
   - component: {fileID: 161394101}
+  - component: {fileID: 161394102}
   m_Layer: 0
   m_Name: mouseIdle
   m_TagString: Player
@@ -2148,7 +2149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161394095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.69, y: 8.76, z: 0}
+  m_LocalPosition: {x: 26.9, y: -6.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2218,6 +2219,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.55, y: 1.59}
   m_EdgeRadius: 0
+--- !u!114 &161394102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161394095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233299cbcef19df4ebd8245003c35d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 161394100}
+  stepOnRate: 0
+  animator: {fileID: 161394096}
+  moveSpeed: 3
+  jumpForce: 7
 --- !u!1 &173531359
 GameObject:
   m_ObjectHideFlags: 0
@@ -7883,8 +7901,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747292471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8320694, y: 0.5622711, z: -7.033077}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 27.58, y: -1.13, z: -11.636583}
+  m_LocalScale: {x: 0.60225, y: 0.60225, z: 0.60225}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7998,7 +8016,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1780082881 stripped
 Transform:
@@ -8570,7 +8588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919787014}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2761612, y: -0.42300987, z: -7.276435}
+  m_LocalPosition: {x: -0.35, y: -0.77, z: -7.276435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10737,6 +10755,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8667473259942336950, guid: 4024a19f6c3cf4afc8410d6d62fb5e2c, type: 3}
   m_PrefabInstance: {fileID: 6074082759459492034}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6122552623585156584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6122552623585156590}
+  - component: {fileID: 6122552623585156585}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Stage
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &6122552623585156585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6122552623585156584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b8098a1f6a08b4e822f6223c9fe7c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageNum: 0
+  continueNum: 0
+  life: 3
+  coin: 0
+  isGameOver: 0
+  isStageClear: 0
+--- !u!4 &6122552623585156590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6122552623585156584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6151627966350541027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 626040898563126438, guid: d218665f50e4249f9807805b8c23ffbe, type: 3}
