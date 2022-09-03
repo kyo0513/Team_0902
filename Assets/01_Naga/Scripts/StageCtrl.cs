@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class StageCtrl : MonoBehaviour
 {
     [Header("プレイヤーゲームオブジェクト")] public GameObject playerObj;
-    [Header("コンティニュー位置")] public GameObject[] continuePoint;
+    //[Header("コンティニュー位置")] public GameObject[] continuePoint;
     
     //ゲームオーバー・クリア関連
     [Header("ゲームオーバー")]  public GameObject gameOverObj;
@@ -17,7 +17,7 @@ public class StageCtrl : MonoBehaviour
     [Header("ステージクリア")]       public GameObject stageClearObj;
     [Header("ステージクリア判定")]   public PlayerTriggerCheck stageClearTrigger;
 
-    private Player p;
+    private Player2 p;             //Player2に変更　09/03
 
     //ゲームオーバー&リトライ処理
     private int nextStageNum;
@@ -40,8 +40,8 @@ public class StageCtrl : MonoBehaviour
         {
             gameOverObj.SetActive(false);  //ゲームオーバーは初期はオフ
             stageClearObj.SetActive(false);
-            //playerObj.transform.position = continuePoint[0].transform.position; //戻り削除09/02
-            p = playerObj.GetComponent<Player>();
+            //playerObj.transform.position = continuePoint[0].transform.position; //コンテニュー位置削除 09/02
+            p = playerObj.GetComponent<Player2>();
             if(p == null)
             {
                 Debug.Log("プレイヤーじゃない物がアタッチされているよ！");
@@ -63,20 +63,22 @@ public class StageCtrl : MonoBehaviour
             doGameOver = true;
         }
         //プレイヤーがやられた時の処理
-        //if(p != null && p.IsContinueWaiting())
         else if (p != null && p.IsContinueWaiting() && !doGameOver)
-        {
-            
+        {   
+            //コンテニューポイント処理削除
+            /* 
             if(continuePoint.Length > GameController.instance.continueNum)
             {
-                //playerObj.transform.position = 
-                //continuePoint[GameController.instance.continueNum].transform.position;  //戻り削除09/02
+                playerObj.transform.position = 
+                continuePoint[GameController.instance.continueNum].transform.position;
                 p.ContinuePlayer();
             }
             else
             {
                 Debug.Log("コンティニューポイントの設定が足りてないよ！");
             }
+            */
+            p.ContinuePlayer();
         }
         //ステージクリア処理追加 08/28
         else if (stageClearTrigger != null && stageClearTrigger.isOn && !doGameOver && !doClear)
@@ -103,7 +105,6 @@ public class StageCtrl : MonoBehaviour
                     movestage = nextstage;
                 }
                 GameController.instance.isStageClear = false;
-                //SceneManager.LoadScene("stage" + nextStageNum);
                 SceneManager.LoadScene(movestage);
                 doSceneChange = true;
             }

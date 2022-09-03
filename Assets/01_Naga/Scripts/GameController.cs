@@ -137,8 +137,6 @@ public class GameController : MonoBehaviour
         coin        = 0; 
         stageNum    = 1;
         continueNum = 0;
-
-
     }
 
     /// SEを鳴らす
