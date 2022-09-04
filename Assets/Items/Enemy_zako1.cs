@@ -9,6 +9,7 @@ public class Enemy_zako1 : MonoBehaviour
     [Header("重力")]public float gravity;     
     [Header("画面外でも行動する")] public bool nonVisibleAct;  //インスペクターから設定する
     [Header("右向きスタート")]     public bool rightstart;     //インスペクターから設定する
+    [Header("加算スコア")]         public int myScore;
 
     private Rigidbody2D  rb     = null;
     private bool rightTleftF    = false;
@@ -85,11 +86,16 @@ public class Enemy_zako1 : MonoBehaviour
         {
             if (!isDead)
              {
-                 //anim.Play("dead");
-                 rb.velocity = new Vector2(0, -gravity); 
-                 isDead = true;
-                 col.enabled = false;
-                 Destroy(gameObject,3f);
+                if(GameController.instance != null)
+                {
+                    GameController.instance.coin += myScore;
+                }
+                
+                //anim.Play("dead");
+                rb.velocity = new Vector2(0, -gravity); 
+                isDead = true;
+                col.enabled = false;
+                Destroy(gameObject,3f);
              }
              else
              {

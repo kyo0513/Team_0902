@@ -13,7 +13,8 @@ public class LifePanel : MonoBehaviour
     [Header("ライフパネルを設定")]   public LifePanel  lifepanel;
     [Header("タイマーパネルを設定")] public Text       timepanel;
     [Header("コインテキストを設定")] public Text       cointext;
-
+    public int score_now = 0;
+    public int max_score;
     //時間表示関連
     private float second;
     private int   minute;
@@ -49,7 +50,14 @@ public class LifePanel : MonoBehaviour
 
         //コイン取得
         //cointext.text    = "×" + coin.ToString("000");
-        cointext.text = "x" + gameController.Coin().ToString("000");
+        //cointext.text = "x" + gameController.Coin().ToString("000");
+        //cointext.text = "Score: " + gameController.Coin().ToString("00000");
+        max_score = gameController.Coin();
+        if(score_now < max_score)
+        {
+            score_now += 10;
+            cointext.text = "Score: " + score_now.ToString("00000");
+        }    
 
         
     }
