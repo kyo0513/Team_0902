@@ -110,6 +110,12 @@ public class Enemy_zako1 : MonoBehaviour
         {
             isOn = true;
         }
+
+        if (collision.tag == "DeadArea" )
+        {
+            Destroy(gameObject,2f);
+        }
+
      }
 
      private void OnTriggerExit2D(Collider2D collision)
