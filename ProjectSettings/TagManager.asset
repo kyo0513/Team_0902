@@ -12,6 +12,7 @@ TagManager:
   - Item
   - JumpStep
   - Stage
+  - Test1
   layers:
   - Default
   - TransparentFX
