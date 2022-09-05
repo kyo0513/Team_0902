@@ -247,6 +247,7 @@ public class Player2 : MonoBehaviour
         anim.SetBool("IsMoving"   , isRun);
         anim.SetBool("IsFalling"  , isFalling);  //ジャンプ改善 09/02
         //物を踏んで跳ねた時のアニメーション条件を入れること       09/03
+        anim.SetBool("IsClimb"    , isCliming);
     }
 
     //コンテニューとダウンアニメーション関連
@@ -271,7 +272,8 @@ public class Player2 : MonoBehaviour
             AnimatorStateInfo currentState =
                 anim.GetCurrentAnimatorStateInfo(0);
 
-            if (currentState.IsName("Play_Down")) 
+            if (currentState.IsName("Mouse_Down")) 
+            //if (currentState.IsName("Play_Down"))
             {
                 if(currentState.normalizedTime >= 1) 
                 {
@@ -287,7 +289,8 @@ public class Player2 : MonoBehaviour
     {
         //GameController.instance.PlaySE(continueSE);
         isDown        = false;
-        anim.Play("Play_Idle");
+        //anim.Play("Play_Idle");
+        anim.Play("Mouse_Idle");
         isJumping     = false;
         isOtherJump   = false;
         isRun         = false;
@@ -307,7 +310,8 @@ public class Player2 : MonoBehaviour
         {
             if (downAnim)
             {
-                anim.Play("Play_Down");
+                //anim.Play("Play_Down");
+                anim.Play("Mouse_Down");
             }
             else
             {
