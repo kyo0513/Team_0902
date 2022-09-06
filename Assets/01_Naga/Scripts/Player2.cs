@@ -9,7 +9,8 @@ public class Player2 : MonoBehaviour
     [Header("踏みつけ判定の高さの割合(%)")] public float stepOnRate  = 10;
     [Header("移動速度")] [SerializeField] private int moveSpeed    = 3;
     [Header("ジャンプ力")][SerializeField] private int jumpForce   = 8;
-    //音関連
+    //音関連 
+    private AudioSource audioSource = null;   
     [Header("ジャンプする時に鳴らすSE")] public AudioClip jumpSE;
     [Header("やられた鳴らすSE")] public AudioClip downSE;
 
@@ -66,6 +67,8 @@ public class Player2 : MonoBehaviour
         rb     = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
         sr     = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+
     }
     private void Update() 
     {
@@ -195,7 +198,8 @@ public class Player2 : MonoBehaviour
 
 
     void Jump()
-    {        
+    {
+        PlaySE(jumpSE);        
         isJumping = true;                                          //ジャンプ判定へ        
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);  //ジャンプ力に力を加える
     }
@@ -430,6 +434,17 @@ public class Player2 : MonoBehaviour
         }
 
     }
+    public void PlaySE(AudioClip clip)
+{
+     if (audioSource != null)
+     {
+         audioSource.PlayOneShot(clip);
+     }
+     else
+     {
+         Debug.Log("オーディオソースが設定されていません");
+     }
+}
 
 
 }

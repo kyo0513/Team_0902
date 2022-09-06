@@ -10,13 +10,15 @@ public class Enemy_zako1 : MonoBehaviour
     [Header("画面外でも行動する")] public bool nonVisibleAct;  //インスペクターから設定する
     [Header("右向きスタート")]     public bool rightstart;     //インスペクターから設定する
     [Header("加算スコア")]         public int myScore;
+    private AudioSource audioSource = null; 
+    [Header("踏まれた時のSE")]     public AudioClip stepSE;
 
     private Rigidbody2D  rb     = null;
     private bool rightTleftF    = false;
     private Enemy1 oc           = null;
     private BoxCollider2D col   = null;
     private bool isDead         = false;
-    [HideInInspector]public bool isOn = false;   //敵か壁にあたると反転する用
+    [HideInInspector]public bool isOn = false;               //敵か壁にあたると反転する用
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,9 @@ public class Enemy_zako1 : MonoBehaviour
         rb  = GetComponent<Rigidbody2D>();
         sr  = GetComponent<SpriteRenderer>(); 
         oc  = GetComponent<Enemy1>();
-        col = GetComponent<BoxCollider2D>(); 
+        col = GetComponent<BoxCollider2D>();
+        audioSource = GetComponent<AudioSource>();
+
         if(rightstart)
         {
             //Debug.Log("右向きON");
@@ -85,7 +89,9 @@ public class Enemy_zako1 : MonoBehaviour
         else
         {
             if (!isDead)
-             {
+            {
+                audioSource.PlayOneShot(stepSE);
+
                 if(GameController.instance != null)
                 {
                     GameController.instance.coin += myScore;
@@ -96,16 +102,16 @@ public class Enemy_zako1 : MonoBehaviour
                 isDead = true;
                 col.enabled = false;
                 Destroy(gameObject,3f);
-             }
-             else
-             {
+            }
+            else
+            {
                 transform.Rotate(new Vector3(0,0,5));
-             }
+            }
         }
     }
 
-     private void OnTriggerEnter2D(Collider2D collision)
-     {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.tag == "Ground" || collision.tag == "Enemy")
         {
             isOn = true;
@@ -115,17 +121,18 @@ public class Enemy_zako1 : MonoBehaviour
         {
             Destroy(gameObject,2f);
         }
+    }
 
-     }
 
-     private void OnTriggerExit2D(Collider2D collision)
-     {
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
         if (collision.tag == "Ground" || collision.tag == "Enemy")
         {
             isOn = false;
             //isOn = !isOn;
         }
-     }
+    }
 
 
 
