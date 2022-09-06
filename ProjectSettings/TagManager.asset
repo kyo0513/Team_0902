@@ -28,7 +28,7 @@ TagManager:
   - MerryGoRound
   - Player
   - FrontAccesary
-  - 
+  - Iseki
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
   m_SortingLayers:
   - name: BackGround
     uniqueID: 3970730495
+    locked: 0
+  - name: Iseki
+    uniqueID: 1895487309
     locked: 0
   - name: MerryGoRound
     uniqueID: 3751888151
