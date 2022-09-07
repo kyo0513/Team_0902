@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_zako1 : MonoBehaviour
+public class Enemy_zako2 : MonoBehaviour
 {
     private SpriteRenderer sr   = null;
     [Header("移動速度")]public float speed;
@@ -16,8 +16,10 @@ public class Enemy_zako1 : MonoBehaviour
     private Rigidbody2D  rb     = null;
     private bool rightTleftF    = false;
     private Enemy1 oc           = null;
-    private BoxCollider2D col   = null;
+    private Collider2D col      = null;
     private bool isDead         = false;
+    private bool isjump         = false;
+    
     [HideInInspector]public bool isOn = false;               //敵か壁にあたると反転する用
 
     // Start is called before the first frame update
@@ -26,7 +28,7 @@ public class Enemy_zako1 : MonoBehaviour
         rb  = GetComponent<Rigidbody2D>();
         sr  = GetComponent<SpriteRenderer>(); 
         oc  = GetComponent<Enemy1>();
-        col = GetComponent<BoxCollider2D>();
+        col = GetComponent<Collider2D>();
         audioSource = GetComponent<AudioSource>();
 
         if(rightstart)
@@ -143,7 +145,5 @@ public class Enemy_zako1 : MonoBehaviour
             //isOn = !isOn;
         }
     }
-
-
-
+    
 }
