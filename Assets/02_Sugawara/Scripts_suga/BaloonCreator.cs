@@ -10,7 +10,7 @@ public class BaloonCreator : MonoBehaviour
     public float baloonAreaStart;
     public float baloonAreaEnd;
     public float baloonCreatePositionY;
-    private float upSpeedMin = 90;
+    private float upSpeedMin = 80;
     private float upSpeedMax = 200;
     public float start = 0.0f;
     public float interval = 5.0f;
