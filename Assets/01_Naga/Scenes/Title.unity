@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fade: {fileID: 1604028157}
-  nextstage: Stage1
+  nextstage: Op
 --- !u!1 &514795830
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,18 @@ EditorBuildSettings:
     path: Assets/01_Naga/Scenes/Title.unity
     guid: b9effdfb7d76bc14c9240bda61025484
   - enabled: 1
+    path: Assets/01_Naga/Scenes/Op.unity
+    guid: cdfccd2eecf159546978959bc223889e
+  - enabled: 1
+    path: Assets/02_Sugawara/Scenes_suga/StageSelection.unity
+    guid: f9ee2e0fd4356415cabc1512e86b1700
+  - enabled: 1
     path: Assets/01_Naga/Scenes/Stage1.unity
     guid: 88b7396aa43d8e44aa3823825c53cdf0
+  - enabled: 1
+    path: Assets/02_Sugawara/Scenes_suga/Stage3-1.unity
+    guid: 1a6761623731a4a398a973bcf62e7d44
+  - enabled: 1
+    path: Assets/03_Morozumi/Scenes_moro/Iseki3.unity
+    guid: c7d98d07d59aa452fbdd400af96f64f8
   m_configObjects: {}

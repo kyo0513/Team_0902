@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5a7c4dcd660034bba5d7186fa73ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextstage: Sample_Stage
+  nextstage: StageSelection
 --- !u!1 &1692560735
 GameObject:
   m_ObjectHideFlags: 0
