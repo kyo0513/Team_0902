@@ -432,19 +432,19 @@ public class Player2 : MonoBehaviour
         {
             ladder_sin = false;
         }
-
     }
+    
     public void PlaySE(AudioClip clip)
-{
-     if (audioSource != null)
-     {
-         audioSource.PlayOneShot(clip);
-     }
-     else
-     {
-         Debug.Log("オーディオソースが設定されていません");
-     }
-}
+    {
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
+        else
+        {
+            Debug.Log("オーディオソースが設定されていません");
+        }
+    }  
 
 
 }

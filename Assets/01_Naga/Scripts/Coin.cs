@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
     [Header("プレイヤーの判定")]    public PlayerTriggerCheck playerCheck;
     private AudioSource audioSource = null;
     [Header("プレイヤーゲームオブジェクト")] public Player2 playerObj;
-     [Header("コイン取得時SE")]             public AudioClip coinSE;
+    [Header("コイン取得時SE")]             public AudioClip coinSE;
     // Update is called once per frame
     void Start()
     {

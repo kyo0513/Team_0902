@@ -15,7 +15,8 @@ public class GameController : MonoBehaviour
     const int DefaultLife   = 3;            //ライフ初期値 08/27
     public int life         = DefaultLife;  //ライフ変動用 08/27
     //public PlayerController player;
-    public int coin         = 0;
+    public int coin         = 0;            //コイン枚数　→　スコアへ
+    public int total_coin   = 0;            //トータルスコア用　09/09
 
     //パネル処理をパネル側へ変更 08/28
     /*
@@ -42,11 +43,13 @@ public class GameController : MonoBehaviour
     {
         if (instance == null)
         {
+            Debug.Log("ゲームコントローラーを作成した");
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else
         {
+            Debug.Log("ゲームコントローラーはすでにある");
             Destroy(this.gameObject);
         }
     }
@@ -102,6 +105,11 @@ public class GameController : MonoBehaviour
         return coin;
     }
 
+    public int Total_Coin()
+    {
+        return total_coin;
+    }
+
     public void Addlife()
     {
         if(life <= 3)
@@ -132,6 +140,7 @@ public class GameController : MonoBehaviour
     //ゲームリスタート
     public void RetryGame()
     {
+        //Debug.Log("初期化");
         isGameOver  = false;
         life        = DefaultLife;
         coin        = 0; 

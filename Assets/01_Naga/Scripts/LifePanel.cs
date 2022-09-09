@@ -13,8 +13,11 @@ public class LifePanel : MonoBehaviour
     [Header("ライフパネルを設定")]   public LifePanel  lifepanel;
     [Header("タイマーパネルを設定")] public Text       timepanel;
     [Header("コインテキストを設定")] public Text       cointext;
+    [Header("トータルスコアを設定")] public Text       totaltext;
+
     public int score_now = 0;
     public int max_score;
+    public int total_score = 0;
     //時間表示関連
     private float second;
     private int   minute;
@@ -31,23 +34,26 @@ public class LifePanel : MonoBehaviour
     {        
         UpdateLife((gameController.Life()));   //08/28
 
-        //経過時間
-        second += Time.deltaTime;
-
-        if(minute > 60)
+        if(timepanel != null)
         {
-            hour++;
-            minute = 0;
-        }
-        if(second > 60f)
-        {
-            minute += 1;
-            second = 0;
-        }
+            //経過時間
+            second += Time.deltaTime;
 
-        //timepanel.text = "" + Time.time;
-        timepanel.text   = hour.ToString() + ":" + minute.ToString("00") + ":" + second.ToString("f2").PadLeft(5, '0');
+            if(minute > 60)
+            {
+                hour++;
+                minute = 0;
+            }
+            if(second > 60f)
+            {
+                minute += 1;
+                second = 0;
+            }
 
+            //timepanel.text = "" + Time.time;
+            timepanel.text   = hour.ToString() + ":" + minute.ToString("00") + ":" + second.ToString("f2").PadLeft(5, '0');
+
+        }
         //コイン取得
         //cointext.text    = "×" + coin.ToString("000");
         //cointext.text = "x" + gameController.Coin().ToString("000");
@@ -57,7 +63,14 @@ public class LifePanel : MonoBehaviour
         {
             score_now += 10;
             cointext.text = "Score: " + score_now.ToString("00000");
-        }    
+        }
+
+        //トータルスコア処理追加　09/09
+        if(totaltext != null)
+        {
+            total_score    =  gameController.Total_Coin();
+            totaltext.text =  "Total:" + total_score.ToString("000000");
+        }
 
         
     }
