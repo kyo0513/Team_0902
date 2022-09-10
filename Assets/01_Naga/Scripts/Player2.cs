@@ -386,6 +386,10 @@ public class Player2 : MonoBehaviour
                 }
             }
         }
+        else  if(collision.collider.tag == hitAreaTag)
+        {
+            ReceiveDamage(true);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -413,10 +417,10 @@ public class Player2 : MonoBehaviour
             GameController.instance.Zerolife();
             //ReceiveDamage(false);
 	    }
-	    else if(collision.tag == hitAreaTag)
-	    {
-            ReceiveDamage(true);
-	    }
+	    //else if(collision.tag == hitAreaTag)
+	    //{
+        //    ReceiveDamage(true);
+	    //}
 
         //はしご処理追加　09/03
         if (collision.CompareTag("Test1"))

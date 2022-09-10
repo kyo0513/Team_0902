@@ -13,6 +13,7 @@ TagManager:
   - JumpStep
   - Stage
   - Test1
+  - HitArea
   layers:
   - Default
   - TransparentFX
