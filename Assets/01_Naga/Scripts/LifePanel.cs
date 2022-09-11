@@ -26,12 +26,20 @@ public class LifePanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GetComponent<GameController>();
         
     }
 
     // Update is called once per frame
     void Update()
-    {        
+    {
+        if(gameController == null)
+        {   
+            //Debug.Log("通過");
+            gameController = GameController.instance;
+
+        }
+
         UpdateLife((gameController.Life()));   //08/28
 
         if(timepanel != null)

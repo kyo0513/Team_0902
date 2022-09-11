@@ -43,13 +43,13 @@ public class GameController : MonoBehaviour
     {
         if (instance == null)
         {
-            Debug.Log("ゲームコントローラーを作成した");
+            //Debug.Log("ゲームコントローラーを作成した");
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
         else
         {
-            Debug.Log("ゲームコントローラーはすでにある");
+            //Debug.Log("ゲームコントローラーはすでにある");
             Destroy(this.gameObject);
         }
     }

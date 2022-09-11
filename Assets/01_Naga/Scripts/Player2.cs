@@ -73,7 +73,7 @@ public class Player2 : MonoBehaviour
     private void Update() 
     {
         if (isContinue)
-        {
+        {            
             //明滅　ついている時に戻る
             if (blinkTime > 0.2f)
             {
@@ -314,6 +314,7 @@ public class Player2 : MonoBehaviour
         {
             if (downAnim)
             {
+                PlaySE(downSE);
                 //anim.Play("Play_Down");
                 anim.Play("Mouse_Down");
             }
@@ -387,7 +388,7 @@ public class Player2 : MonoBehaviour
             }
         }
         else  if(collision.collider.tag == hitAreaTag)
-        {
+        {            
             ReceiveDamage(true);
         }
     }
