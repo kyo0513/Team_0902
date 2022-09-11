@@ -148,6 +148,13 @@ public class GameController : MonoBehaviour
         continueNum = 0;
     }
 
+    public void Gamecler()
+    {
+        life        =  DefaultLife;
+        total_coin  += coin;
+        coin        =  0;
+    }
+
     /// SEを鳴らす
     /*
     public void PlaySE(AudioClip clip)

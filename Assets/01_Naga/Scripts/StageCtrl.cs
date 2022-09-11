@@ -109,6 +109,7 @@ public class StageCtrl : MonoBehaviour
                 //次のステージ
                 else
                 {
+                    GameController.instance.Gamecler();
                     GameController.instance.stageNum = nextStageNum;
                     movestage = nextstage;
                 }
