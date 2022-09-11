@@ -115085,7 +115085,11 @@ MonoBehaviour:
   clackersPrefabs: []
   clackerParent: {fileID: 0}
   offset: 1
-  clackerList: []
+  clackerList:
+  - {fileID: 414926471402241005, guid: e0265c028959f46ef999ac9bc8001339, type: 3}
+  - {fileID: 3539524678727629521, guid: 4bd919bb261e9463eba1bf170ee1a496, type: 3}
+  - {fileID: 3568145788233017236, guid: d48245b8086d14c29896a90308b96570, type: 3}
+  - {fileID: 3613654257189276533, guid: c62ea8e6ba9cd4f3fb8eee2b649d09c3, type: 3}
   deg: 3.6
   minPower: 20
   maxPower: 60
