@@ -38,7 +38,7 @@ public class StageCtrl : MonoBehaviour
  
     void Start()
     {
-        Debug.Log("ステージコントローラー　スタート処理");
+        //Debug.Log("ステージコントローラー　スタート処理");
         audioSource = GetComponent<AudioSource>();
 
         //if (playerObj != null && continuePoint != null && continuePoint.Length > 0)
