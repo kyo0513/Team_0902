@@ -7083,6 +7083,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3365831090893833898, guid: a405a1db092d8b7448d612f852048126, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -559
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365831090893833898, guid: a405a1db092d8b7448d612f852048126, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 277
+      objectReference: {fileID: 0}
     - target: {fileID: 3365831091117865104, guid: a405a1db092d8b7448d612f852048126, type: 3}
       propertyPath: gameController
       value: 
