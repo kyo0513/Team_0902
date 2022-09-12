@@ -349,6 +349,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1506b819ceb28114dbb1b55925f1ec1d, type: 3}
+--- !u!1 &19393070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19393071}
+  m_Layer: 0
+  m_Name: ClackerParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &19393071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19393070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1011.8256, y: 471.54752, z: -3.821446}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &19410598 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8508112142927365198, guid: a5dea3a6085e10d49a19e75161caae77, type: 3}
@@ -6654,14 +6685,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103bdcb2eb4aa43cdab8886e5f2fd2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clackersPrefabs: []
-  clackerParent: {fileID: 0}
-  offset: 1
-  clackerList:
+  clackersPrefabs:
   - {fileID: 414926471402241005, guid: e0265c028959f46ef999ac9bc8001339, type: 3}
   - {fileID: 3539524678727629521, guid: 4bd919bb261e9463eba1bf170ee1a496, type: 3}
   - {fileID: 3568145788233017236, guid: d48245b8086d14c29896a90308b96570, type: 3}
   - {fileID: 3613654257189276533, guid: c62ea8e6ba9cd4f3fb8eee2b649d09c3, type: 3}
+  clackerParent: {fileID: 19393071}
+  offset: 1
+  clackerList: []
   deg: 3.6
   minPower: 20
   maxPower: 60
